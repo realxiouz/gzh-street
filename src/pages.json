@@ -7,6 +7,42 @@
 			}
 		},
 		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "社区通告"
+			}
+		},
+		{
+			"path": "pages/message/apply",
+			"style": {
+				"navigationBarTitleText": "留言板"
+			}
+		},
+		{
+			"path": "pages/topic/index",
+			"style": {
+				"navigationBarTitleText": "热门专题"
+			}
+		},
+		{
+			"path": "pages/activity/index",
+			"style": {
+				"navigationBarTitleText": "社区活动"
+			}
+		},
+		{
+			"path": "pages/activity/apply",
+			"style": {
+				"navigationBarTitleText": "活动报名"
+			}
+		},
+		{
+			"path": "pages/street/index",
+			"style": {
+				"navigationBarTitleText": "社区街道"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
@@ -33,9 +69,9 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "智慧吉普",
+		"navigationBarBackgroundColor": "#000",
 		"backgroundColor": "#F8F8F8"
 	}
 }

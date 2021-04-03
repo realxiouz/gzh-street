@@ -1,7 +1,7 @@
 <template>
   <div>
-    <swiper class="card-swiper bg-white margin-bottom-xs" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
-		 :autoplay="true" interval="5000" duration="500" @change="cardSwiper" indicator-color="#8799a3"
+    <swiper class="card-swiper bg-white margin-bottom-xs" :class="true?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
+		 :autoplay="true" interval="5000" duration="500" @change="inxChange" indicator-color="#8799a3"
 		 indicator-active-color="#0081ff">
 			<swiper-item v-for="(item,index) in banner" :key="index" :class="curInx==index?'cur':''">
 				<view class="swiper-item">
@@ -11,7 +11,7 @@
 		</swiper>
 
     <div class="bg-white flex justify-around margin-bottom-xs" style="height:140rpx;">
-      <div class="flex-sub flex flex-direction align-center text-xs justify-center" v-for="(i,inx) in icons" :key="inx">
+      <div class="flex-sub flex flex-direction align-center text-xs justify-center" v-for="(i,inx) in icons" :key="inx" @click="onIconClick(i)">
         <div :class="i.cls" style="width:66rpx;height:66rpx;"></div>
         <div class="margin-top-xs">{{i.title}}</div>
       </div>
@@ -59,7 +59,7 @@
       <div class="cuIcon-right" style="margin-right:30rpx;"></div>
     </view>
     <div class="padding-left bg-white margin-bottom-xs flex flex-wrap">
-      <div class="padding-tb-sm margin-right-sm" v-for="i in 3" :key="i">
+      <div class="padding-bottom-sm margin-right-sm" v-for="i in 3" :key="i">
         <img style="width:333rpx;height:166rpx;" src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg" alt="">
         <div class="text-cut">愿君多采撷，此物最相思</div>
       </div>
@@ -96,34 +96,44 @@ export default {
         },
         {
           title: '社区通告',
-          cls: 'bg-olive'
+          cls: 'bg-olive',
+          path: `/pages/message/index`
         },
         {
           title: '热门专题',
-          cls: 'bg-yellow'
+          cls: 'bg-yellow',
+          path: `/pages/topic/index`
         },
         {
           title: '街道活动',
-          cls: 'bg-blue'
+          cls: 'bg-blue',
+          path: `/pages/activity/index`
         },
         {
           title: '街道介绍',
-          cls: 'bg-cyan'
+          cls: 'bg-cyan',
+          path: `/pages/street/index`
         },
-        {
-          title: '社区详情',
-          cls: 'bg-grey'
-        },
+        // {
+        //   title: '社区详情',
+        //   cls: 'bg-grey'
+        // },
         {
           title: '留言板',
-          cls: 'bg-purple'
+          cls: 'bg-purple',
+          path: `/pages/message/apply`
         },
       ]
     }
   },
   methods: {
-    cardSwiper(e) {
+    inxChange(e) {
       this.curInx = e.detail.current
+    },
+    onIconClick(i) {
+      if(i.path) {
+        this.$go(i.path)
+      }
     }
   }
 }
