@@ -47,6 +47,12 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path": "pages/detail/index",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
 		}
 	],
 	"subPackages": [

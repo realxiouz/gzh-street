@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://street.csywlkj.com'
 import store from '@/store'
 
 function getUrl(url) {

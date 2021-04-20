@@ -6,8 +6,8 @@
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 }
 
-view,
-scroll-view,
+div,
+scroll-div,
 swiper,
 button,
 input,
@@ -938,7 +938,7 @@ button.cuIcon.lg {
 	width: 100%;
 }
 
-.cu-progress+view,
+.cu-progress+div,
 .cu-progress+text {
 	line-height: 1;
 }
@@ -951,7 +951,7 @@ button.cuIcon.lg {
 	height: 20upx;
 }
 
-.cu-progress view {
+.cu-progress div {
 	width: 0;
 	height: 100%;
 	align-items: center;
@@ -975,12 +975,12 @@ button.cuIcon.lg {
 	padding-right: 60upx;
 }
 
-.cu-progress.striped view {
+.cu-progress.striped div {
 	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 	background-size: 72upx 72upx;
 }
 
-.cu-progress.active view {
+.cu-progress.active div {
 	animation: progress-stripes 2s linear infinite;
 }
 
@@ -1190,7 +1190,7 @@ button.cuIcon.lg {
 	transform: translateX(100%)
 }
 
-.cu-list>.cu-item .move view {
+.cu-list>.cu-item .move div {
 	display: flex;
 	flex: 1;
 	justify-content: center;
@@ -1231,7 +1231,7 @@ button.cuIcon.lg {
 	width: calc(100% - 96upx - 60upx - 20upx);
 }
 
-.cu-list.menu-avatar>.cu-item .content>view:first-child {
+.cu-list.menu-avatar>.cu-item .content>div:first-child {
 	font-size: 30upx;
 	display: flex;
 	align-items: center
@@ -1250,7 +1250,7 @@ button.cuIcon.lg {
 	text-align: center
 }
 
-.cu-list.menu-avatar>.cu-item .action view+view {
+.cu-list.menu-avatar>.cu-item .action div+div {
 	margin-top: 10upx
 }
 
@@ -1343,7 +1343,7 @@ button.cuIcon.lg {
 	border-color: #ffffff
 }
 
-.cu-list.menu>.cu-item .content>view:first-child {
+.cu-list.menu>.cu-item .content>div:first-child {
 	display: flex;
 	align-items: center
 }
@@ -1568,7 +1568,7 @@ button.cuIcon.lg {
 }
 
 .cu-bar .action>text[class*="cuIcon-"],
-.cu-bar .action>view[class*="cuIcon-"] {
+.cu-bar .action>div[class*="cuIcon-"] {
 	font-size: 36upx;
 }
 
@@ -2648,12 +2648,12 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active {
 	display: flex;
 }
 
-scroll-view.cu-steps {
+scroll-div.cu-steps {
 	display: block;
 	white-space: nowrap;
 }
 
-scroll-view.cu-steps .cu-item {
+scroll-div.cu-steps .cu-item {
 	display: inline-block;
 }
 
@@ -2903,7 +2903,7 @@ scroll-view.cu-steps .cu-item {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.grid.grid-square>view>text[class*="cuIcon-"] {
+.grid.grid-square>div>text[class*="cuIcon-"] {
 	font-size: 52upx;
 	position: absolute;
 	color: #8799a3;
@@ -2918,72 +2918,72 @@ scroll-view.cu-steps .cu-item {
 	flex-direction: column;
 }
 
-.grid.grid-square>view {
+.grid.grid-square>div {
 	margin-right: 20upx;
 	margin-bottom: 20upx;
 	border-radius: 6upx;
 	position: relative;
 	overflow: hidden;
 }
-.grid.grid-square>view.bg-img image {
+.grid.grid-square>div.bg-img image {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 }
-.grid.col-1.grid-square>view {
+.grid.col-1.grid-square>div {
 	padding-bottom: 100%;
 	height: 0;
 	margin-right: 0;
 }
 
-.grid.col-2.grid-square>view {
+.grid.col-2.grid-square>div {
 	padding-bottom: calc((100% - 20upx)/2);
 	height: 0;
 	width: calc((100% - 20upx)/2);
 }
 
-.grid.col-3.grid-square>view {
+.grid.col-3.grid-square>div {
 	padding-bottom: calc((100% - 40upx)/3);
 	height: 0;
 	width: calc((100% - 40upx)/3);
 }
 
-.grid.col-4.grid-square>view {
+.grid.col-4.grid-square>div {
 	padding-bottom: calc((100% - 60upx)/4);
 	height: 0;
 	width: calc((100% - 60upx)/4);
 }
 
-.grid.col-5.grid-square>view {
+.grid.col-5.grid-square>div {
 	padding-bottom: calc((100% - 80upx)/5);
 	height: 0;
 	width: calc((100% - 80upx)/5);
 }
 
-.grid.col-2.grid-square>view:nth-child(2n),
-.grid.col-3.grid-square>view:nth-child(3n),
-.grid.col-4.grid-square>view:nth-child(4n),
-.grid.col-5.grid-square>view:nth-child(5n) {
+.grid.col-2.grid-square>div:nth-child(2n),
+.grid.col-3.grid-square>div:nth-child(3n),
+.grid.col-4.grid-square>div:nth-child(4n),
+.grid.col-5.grid-square>div:nth-child(5n) {
 	margin-right: 0;
 }
 
-.grid.col-1>view {
+.grid.col-1>div {
 	width: 100%;
 }
 
-.grid.col-2>view {
+.grid.col-2>div {
 	width: 50%;
 }
 
-.grid.col-3>view {
+.grid.col-3>div {
 	width: 33.33%;
 }
 
-.grid.col-4>view {
+.grid.col-4>div {
 	width: 25%;
 }
 
-.grid.col-5>view {
+.grid.col-5>div {
 	width: 20%;
 }
 
@@ -3712,8 +3712,8 @@ scroll-view.cu-steps .cu-item {
 	top: 0;
 }
 
-.bg-mask view,
-.bg-mask cover-view {
+.bg-mask div,
+.bg-mask cover-div {
 	z-index: 5;
 	position: relative;
 }
