@@ -53,6 +53,12 @@
 			"style": {
 				"navigationBarTitleText": "详情"
 			}
+		},
+		{
+			"path": "pages/h5/index",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
 		}
 	],
 	"subPackages": [
@@ -76,6 +82,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
+		"navigationStyle": "custom",
 		"navigationBarTitleText": "智慧吉普",
 		"navigationBarBackgroundColor": "#000",
 		"backgroundColor": "#F8F8F8"

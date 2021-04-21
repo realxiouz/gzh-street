@@ -26,6 +26,20 @@ export default {
   onLoad(opt) {
     this.opt = opt
     this.getData()
+    console.log('onLoad...')
+    if (this.isLoaded) {
+      this.$go(1, 'back')
+    }
+  },
+  onShow() {
+    console.log('onShow...')
+    // if (this.isBack) {
+    //   console.log('need back')
+    //   this.$go(1,'back')
+    // }
+    if (this.isLoaded) {
+      this.$go(1, 'back')
+    }
   },
   data() {
     return {
@@ -44,8 +58,12 @@ export default {
         .then(r => {
           this.isLoaded = true
           let {channelInfo, archivesInfo} = r.data
-          this.channelInfo = channelInfo
-          this.archivesInfo = archivesInfo
+          if (archivesInfo.outlink) {
+            window.location.replace(archivesInfo.outlink)
+          } else {
+            this.channelInfo = channelInfo
+            this.archivesInfo = archivesInfo
+          }
         })
         .finally(_ => {
           this.$hideLoading()
