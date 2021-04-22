@@ -10,14 +10,8 @@
 			</swiper-item>
 		</swiper>
 
-    <!-- <div class="bg-white flex justify-around margin-bottom-xs" style="height:140rpx;">
-      <div class="flex-sub flex flex-direction align-center text-xs justify-center" v-for="(i,inx) in icons" :key="inx" @click="onIconClick(i)">
-        <div :class="i.cls" style="width:66rpx;height:66rpx;"></div>
-        <div class="margin-top-xs">{{i.title}}</div>
-      </div>
-    </div> -->
     <div class="cu-list grid col-4 bg-white margin-bottom-xs">
-      <div class="cu-item align-center" v-for="i,inx in menu" :key="inx">
+      <div class="cu-item align-center" v-for="i,inx in menu" :key="inx" @click="$go(i.value.path)">
         <img style="width:120rpx;height:120rpx;" :src="i.value.image" alt="">
         <div class="text-cut text-sm">{{i.value.title}}</div>
       </div>
@@ -35,10 +29,10 @@
       </swiper>
     </div>
 
-    <view class="cu-bar bg-white">
+    <view class="cu-bar bg-white" v-if="archivesList.length">
       <view class="action">
         <text class="cuIcon-titles text-yellow"></text>
-        <text class="text-xl text-bold">热门专题</text>
+        <text class="text-xl text-bold">{{archivesList[0].channel.name}}</text>
       </view>
       <div class="flex-sub"></div>
       <div>更多</div>
@@ -83,11 +77,6 @@
 export default {
   onLoad(opt) {
     this.getData()
-
-    // this.$get(`api/v1/archives/index`, {
-    //   page: 1,
-    //   channel: 8
-    // })
   },
   data() {
     return {
@@ -97,41 +86,6 @@ export default {
       activity: [],
       menu: [],
       announcement: [],
-      icons: [
-        {
-          title: '基层党建',
-          cls: 'bg-orange'
-        },
-        {
-          title: '社区通告',
-          cls: 'bg-olive',
-          path: `/pages/message/index`
-        },
-        {
-          title: '热门专题',
-          cls: 'bg-yellow',
-          path: `/pages/topic/index`
-        },
-        {
-          title: '街道活动',
-          cls: 'bg-blue',
-          path: `/pages/activity/index`
-        },
-        {
-          title: '街道介绍',
-          cls: 'bg-cyan',
-          path: `/pages/street/index`
-        },
-        // {
-        //   title: '社区详情',
-        //   cls: 'bg-grey'
-        // },
-        {
-          title: '留言板',
-          cls: 'bg-purple',
-          path: `/pages/message/apply`
-        },
-      ]
     }
   },
   methods: {
