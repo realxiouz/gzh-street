@@ -1,9 +1,18 @@
 <template>
   <div>
     <div class="bg-blue" style="height:570rpx;position:fixed;top:0;left:0;right:0;z-index:-1;" v-if="list.length">
-      <img style="width:100%;height:100%;" :src="`${list[0].channel.image}`" alt="">
+      <!-- <img style="width:100%;height:100%;" :src="`http://street.csywlkj.com/${list[0].channel.image}`" alt=""> -->
     </div>
-    
+
+    <div style="position:sticky;top:0;padding:76rpx 30rpx 58rpx;">
+      <div style="height:114rpx;background:#fff;" class="flex shadow radius">
+        <div class="flex-sub align-center flex-direction flex" v-for="(i,inx) in tab" :key="inx">
+          <img :src="i.image" alt="" style="width:80rpx;height:80rpx;">
+          <div class="text-sm text-bold" :class="inx==curInx?'text-black':'text-grey'">{{i.title}}</div>
+          <div v-if="inx==curInx" style="width:40rpx;height:4rpx;background:#F6775A"></div>
+        </div>
+      </div>
+    </div>
     <div class="topic-wrap">
       <div class="bg-white radius margin-bottom-lg shadow padding-lr" v-for="(i,inx) in list" :key="inx" @click="$go(`/pages/detail/index?id=${i.id}`)">
         <div class="text-cut text-bold" style="line-height:70rpx">{{i.title}}</div>
@@ -27,6 +36,7 @@
 export default {
   onLoad(opt) {
     this.opt = opt
+    this.curInx = opt.i || 0
     this.getData()
   },
   data() {
@@ -36,6 +46,22 @@ export default {
       isLoading: false,
       isEnd: false,
       page: 1,
+
+      tab: [
+        {
+          img: '',
+          title: '学党史'
+        },
+        {
+          img: '',
+          title: '知党务'
+        },
+        {
+          img: '',
+          title: '测试'
+        }
+      ],
+      curInx: 0,
     }
   },
   methods: {
@@ -71,8 +97,7 @@ export default {
 
 <style>
 .topic-wrap{
-  margin: 200rpx auto 0;
-  height: 1000rpx;
+  margin: 0 auto 0;
   width: 690rpx;
 }
 </style>

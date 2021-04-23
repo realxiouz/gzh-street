@@ -65,6 +65,12 @@
 			"style": {
 				"navigationBarTitleText": "列表"
 			}
+		},
+		{
+			"path": "pages/list/multi",
+			"style": {
+				"navigationBarTitleText": "列表"
+			}
 		}
 	],
 	"subPackages": [

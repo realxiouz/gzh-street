@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="bg-white margin-bottom-xs padding-sm flex align-center">
+    <div class="bg-white margin-bottom-xs padding-sm flex align-center" v-if="announcement.length>0" @click="$go(`/pages/message/index?c=${announcement[0].channel.id}`)">
       <div class="cuIcon-commentfill text-red margin-right-xs font-lg"></div>
       <div class="text margin-right text-bold">公告:</div>
       <swiper class="flex-sub" style="height:50rpx;line-height:50rpx;" :vertical="true" :autoplay="announcement.length>1" :duration="300" :circular="true">
