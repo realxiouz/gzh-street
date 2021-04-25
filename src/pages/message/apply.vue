@@ -94,7 +94,7 @@ export default {
 <style>
 .msg-wrap{
   margin: -490rpx auto 0;
-  height: 1000rpx;
+  
   width: 690rpx;
 }
 </style>

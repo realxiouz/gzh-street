@@ -29,7 +29,7 @@
       </swiper>
     </div>
 
-    <view class="cu-bar bg-white" v-if="archivesList.length">
+    <view class="cu-bar bg-white" v-if="archivesList.length" @click="$go(`/pages/list/index?c=${archivesList[0].channel.id}`)">
       <view class="action">
         <text class="cuIcon-titles text-yellow"></text>
         <text class="text-xl text-bold">{{archivesList[0].channel.name}}</text>
@@ -54,8 +54,9 @@
         </div>
       </div>
     </div>
-
-    <view class="cu-bar bg-white">
+    
+    <template v-if="false">
+    <view class="cu-bar bg-white" >
       <view class="action">
         <text class="cuIcon-titles text-red"></text>
         <text class="text-xl text-bold">街道活动</text>
@@ -70,6 +71,7 @@
         <div class="text-cut">{{i.project_name}}</div>
       </div>
     </div>
+    </template>
   </div>
 </template>
 

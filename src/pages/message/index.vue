@@ -2,7 +2,7 @@
   <div>
     <div class="bg-olive" style="height:570rpx"></div>
 
-    <scroll-view class="msg-wrap bg-white radius shadow padding-lr-sm" scroll-y>
+    <scroll-view class="msg-wrap bg-white radius shadow padding-lr-sm" style="box-sizing:border-box;" scroll-y>
       <div v-for="(i, inx) in list" :key="inx" class="bg-white padding-tb-sm flex align-center" :class="inx==list.length-1?'':'solid-bottom'" @click="$go(`/pages/detail/index?id=${i.id}`)">
         <div class="cuIcon-commentfill text-red margin-right-xs" style="font-size:20px;"></div>
         <div class="text margin-right text-bold">公告:</div>
@@ -66,7 +66,7 @@ export default {
 <style>
 .msg-wrap{
   margin: -490rpx auto 0;
-  height: 1000rpx;
+  
   width: 690rpx;
 }
 </style>

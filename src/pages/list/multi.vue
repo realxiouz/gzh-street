@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="bg-blue" style="height:570rpx;position:fixed;top:0;left:0;right:0;z-index:-1;" v-if="list.length">
-      <!-- <img style="width:100%;height:100%;" :src="`http://street.csywlkj.com/${list[0].channel.image}`" alt=""> -->
+      <img style="width:100%;height:100%;" :src="`${list[0].channel.image}`" alt="">
     </div>
 
-    <div style="position:sticky;top:0;padding:76rpx 30rpx 58rpx;">
+    <div style="position:sticky;top:0;padding:88rpx 30rpx 58rpx;">
       <div style="height:114rpx;background:#fff;" class="flex shadow radius">
-        <div class="flex-sub align-center flex-direction flex" v-for="(i,inx) in tab" :key="inx">
+        <div class="flex-sub align-center flex-direction flex" v-for="(i,inx) in tab" :key="inx" @click="onToggle(inx)">
           <img :src="i.image" alt="" style="width:80rpx;height:80rpx;">
-          <div class="text-sm text-bold" :class="inx==curInx?'text-black':'text-grey'">{{i.title}}</div>
+          <div class="text-sm text-bold" :class="inx==curInx?'text-black':'text-grey'">{{i.name}}</div>
           <div v-if="inx==curInx" style="width:40rpx;height:4rpx;background:#F6775A"></div>
         </div>
       </div>
@@ -34,7 +34,9 @@
 
 <script>
 export default {
-  onLoad(opt) {
+  async onLoad(opt) {
+    let {data} = await this.$get(`/api/v1/channel/list?channel=27`)
+    this.tab = data.data
     this.opt = opt
     this.curInx = opt.i || 0
     this.getData()
@@ -47,27 +49,19 @@ export default {
       isEnd: false,
       page: 1,
 
-      tab: [
-        {
-          img: '',
-          title: '学党史'
-        },
-        {
-          img: '',
-          title: '知党务'
-        },
-        {
-          img: '',
-          title: '测试'
-        }
-      ],
+      tab: [],
       curInx: 0,
     }
   },
   methods: {
-    getData() {
+    getData(reset = false) {
+      if (reset) {
+        this.page = 1
+        this.list = []
+        this.isEnd = false
+      }
       let d = {
-        channel: this.opt.c,
+        channel: this.tab[this.curInx].id,
         page: this.page
       }
       this.$showLoading()
@@ -78,12 +72,21 @@ export default {
             this.isEnd = true
           }
           this.list.push(...r.data)
+          if (this.list.length) {
+            this.$setTitle(this.list[0].channel.name)
+          }
         })
         .finally(_ => {
           this.$hideLoading()
           this.isLoading = false
         })
-    }
+    },
+    onToggle(inx) {
+      if (this.curInx != inx) {
+        this.curInx = inx
+        this.getData(true)
+      }
+    },
   },
   onReachBottom() {
     if (this.isLoading || this.isEnd) {

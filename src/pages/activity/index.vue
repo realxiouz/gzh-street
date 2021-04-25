@@ -37,7 +37,7 @@ export default {
 <style>
 .topic-wrap{
   margin: 200rpx auto 0;
-  height: 1000rpx;
+  
   width: 690rpx;
 }
 </style>

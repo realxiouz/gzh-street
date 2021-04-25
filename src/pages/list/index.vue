@@ -52,6 +52,9 @@ export default {
             this.isEnd = true
           }
           this.list.push(...r.data)
+          if (this.list.length) {
+            this.$setTitle(this.list[0].channel.name)
+          }
         })
         .finally(_ => {
           this.$hideLoading()
@@ -72,7 +75,7 @@ export default {
 <style>
 .topic-wrap{
   margin: 200rpx auto 0;
-  height: 1000rpx;
+  
   width: 690rpx;
 }
 </style>
