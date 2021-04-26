@@ -35,10 +35,10 @@
 <script>
 export default {
   async onLoad(opt) {
-    let {data} = await this.$get(`/api/v1/channel/list?channel=27`)
+    let {data} = await this.$get(`/api/v1/channel/list?channel=${opt.p}`)
     this.tab = data.data
     this.opt = opt
-    this.curInx = opt.i || 0
+    // this.curInx = opt.i || 0
     this.getData()
   },
   data() {
