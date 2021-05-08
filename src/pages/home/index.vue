@@ -78,6 +78,7 @@
 <script>
 export default {
   onLoad(opt) {
+    this.$setTitle(process.env.VUE_APP_TITLE)
     this.getData()
   },
   data() {

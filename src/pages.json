@@ -3,7 +3,7 @@
 		{
 			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "智慧普吉"
+				"navigationBarTitleText": "智慧街道"
 			}
 		},
 		{
@@ -95,7 +95,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationStyle": "default",
-		"navigationBarTitleText": "智慧普吉",
+		"navigationBarTitleText": "智慧街道",
 		"navigationBarBackgroundColor": "#000",
 		"backgroundColor": "#F8F8F8"
 	}

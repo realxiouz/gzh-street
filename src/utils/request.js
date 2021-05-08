@@ -1,4 +1,4 @@
-const BASE_URL = 'http://street.csywlkj.com'
+const BASE_URL = process.env.VUE_APP_BASE
 import store from '@/store'
 
 function getUrl(url) {
